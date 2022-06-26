@@ -1,0 +1,24 @@
+{
+  "name": "vulcan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/parse.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watilde/vulcan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/watilde/vulcan/issues"
+  },
+  "homepage": "https://github.com/watilde/vulcan#readme",
+  "dependencies": {
+    "fast-xml-parser": "^4.0.8",
+    "json2csv": "^5.0.7"
+  }
+}
