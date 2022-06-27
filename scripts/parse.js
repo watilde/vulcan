@@ -27,6 +27,10 @@ versions.forEach((version) => {
         return item !== '' && item !== 'doco'
       })
       .join(',')
-    fs.writeFileSync(path.join(OUT_PATH, version, resource.replace('xml', 'csv')), parsedCsv);
+      const TARGET_DIR = path.join(OUT_PATH, version)
+      if (!fs.existsSync(TARGET_DIR)){
+        fs.mkdirSync(TARGET_DIR, { recursive: true });
+    }
+    fs.writeFileSync(path.join(TARGET_DIR, resource.replace('xml', 'csv')), parsedCsv);
   });
 })
