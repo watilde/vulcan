@@ -1,5 +1,5 @@
-# vulcan-fhir-header-exporter
-Export FHIR Resource content as csv header to support mapping of FHIR to something.
+# vulcan-fhir-resource-content-extractor
+Extract FHIR Resource content as csv header to support mapping of FHIR to something elsex.
 
 ## Getting started
 1. Install dependencies.
