@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const { XMLParser } = require('fast-xml-parser')
-const { Parser, transforms: { flatten } } = require('json2csv');
+const { Parser, transforms: { flatten } } = require('json2csv')
 const RESOURCE_PATH = path.join(__dirname, '../FHIR/')
 const OUT_PATH = path.join(__dirname, '../OUT/')
 const versions = fs.readdirSync(RESOURCE_PATH)
@@ -27,10 +27,10 @@ versions.forEach((version) => {
         return item !== '' && item !== 'doco'
       })
       .join(',')
-      const TARGET_DIR = path.join(OUT_PATH, version)
-      if (!fs.existsSync(TARGET_DIR)){
-        fs.mkdirSync(TARGET_DIR, { recursive: true });
+    const TARGET_DIR = path.join(OUT_PATH, version)
+    if (!fs.existsSync(TARGET_DIR)) {
+      fs.mkdirSync(TARGET_DIR, { recursive: true })
     }
-    fs.writeFileSync(path.join(TARGET_DIR, resource.replace('xml', 'csv')), parsedCsv);
-  });
+    fs.writeFileSync(path.join(TARGET_DIR, resource.replace('xml', 'csv')), parsedCsv)
+  })
 })
