@@ -1,5 +1,5 @@
 # vulcan-fhir-resource-content-extractor
-Extract FHIR Resource content as csv header to support mapping of FHIR to something elsex.
+Extract FHIR Resource content as csv header to support mapping of FHIR to something else.
 
 ## Folders and files
 Place a FHIR's version folder and resource definitions in xml into the folder
