@@ -1,0 +1,50 @@
+<ConceptMap xmlns="http://hl7.org/fhir"> doco
+ <!-- from Resource: id, meta, implicitRules, and language -->
+ <!-- from DomainResource: text, contained, extension, and modifierExtension -->
+ <url value="[uri]"/><!-- 0..1 Canonical identifier for this concept map, represented as a URI (globally unique) -->
+ <identifier><!-- 0..1 Identifier Additional identifier for the concept map --></identifier>
+ <version value="[string]"/><!-- 0..1 Business version of the concept map -->
+ <name value="[string]"/><!-- 0..1 Name for this concept map (computer friendly) -->
+ <title value="[string]"/><!-- 0..1 Name for this concept map (human friendly) -->
+ <status value="[code]"/><!-- 1..1 draft | active | retired | unknown -->
+ <experimental value="[boolean]"/><!-- 0..1 For testing purposes, not real usage -->
+ <date value="[dateTime]"/><!-- 0..1 Date last changed -->
+ <publisher value="[string]"/><!-- 0..1 Name of the publisher (organization or individual) -->
+ <contact><!-- 0..* ContactDetail Contact details for the publisher --></contact>
+ <description value="[markdown]"/><!-- 0..1 Natural language description of the concept map -->
+ <useContext><!-- 0..* UsageContext The context that the content is intended to support --></useContext>
+ <jurisdiction><!-- 0..* CodeableConcept Intended jurisdiction for concept map (if applicable) --></jurisdiction>
+ <purpose value="[markdown]"/><!-- 0..1 Why this concept map is defined -->
+ <copyright value="[markdown]"/><!-- 0..1 Use and/or publishing restrictions -->
+ <source[x]><!-- 0..1 uri|canonical(ValueSet) The source value set that contains the concepts that are being mapped --></source[x]>
+ <target[x]><!-- 0..1 uri|canonical(ValueSet) The target value set which provides context for the mappings --></target[x]>
+ <group>  <!-- 0..* Same source and target systems -->
+  <source value="[uri]"/><!-- 0..1 Source system where concepts to be mapped are defined -->
+  <sourceVersion value="[string]"/><!-- 0..1 Specific version of the  code system -->
+  <target value="[uri]"/><!-- 0..1 Target system that the concepts are to be mapped to -->
+  <targetVersion value="[string]"/><!-- 0..1 Specific version of the  code system -->
+  <element>  <!-- 1..* Mappings for a concept from the source set -->
+   <code value="[code]"/><!-- 0..1 Identifies element being mapped -->
+   <display value="[string]"/><!-- 0..1 Display for the code -->
+   <target>  <!-- 0..* Concept in target system for element -->
+    <code value="[code]"/><!-- 0..1 Code that identifies the target element -->
+    <display value="[string]"/><!-- 0..1 Display for the code -->
+    <equivalence value="[code]"/><!-- 1..1 relatedto | equivalent | equal | wider | subsumes | narrower | specializes | inexact | unmatched | disjoint -->
+    <comment value="[string]"/><!-- ?? 0..1 Description of status/issues in mapping -->
+    <dependsOn>  <!-- 0..* Other elements required for this mapping (from context) -->
+     <property value="[uri]"/><!-- 1..1 Reference to property mapping depends on -->
+     <system><!-- 0..1 canonical(CodeSystem) Code System (if necessary) --></system>
+     <value value="[string]"/><!-- 1..1 Value of the referenced element -->
+     <display value="[string]"/><!-- 0..1 Display for the code (if value is a code) -->
+    </dependsOn>
+    <product><!-- 0..* Content as for ConceptMap.group.element.target.dependsOn Other concepts that this mapping also produces --></product>
+   </target>
+  </element>
+  <unmapped>  <!-- 0..1 What to do when there is no mapping for the source concept -->
+   <mode value="[code]"/><!-- 1..1 provided | fixed | other-map -->
+   <code value="[code]"/><!-- 0..1 Fixed code when mode = fixed -->
+   <display value="[string]"/><!-- 0..1 Display for the code -->
+   <url><!-- 0..1 canonical(ConceptMap) canonical reference to an additional ConceptMap to use for mapping if the source concept is unmapped --></url>
+  </unmapped>
+ </group>
+</ConceptMap>
