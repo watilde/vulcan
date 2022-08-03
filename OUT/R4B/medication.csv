@@ -1,0 +1,1 @@
+Medication.identifier,Medication.code,Medication.status,Medication.manufacturer,Medication.form,Medication.amount,Medication.ingredient.item,Medication.ingredient.isActive,Medication.ingredient.strength,Medication.batch.lotNumber,Medication.batch.expirationDate,Medication.text
